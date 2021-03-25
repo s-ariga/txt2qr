@@ -41,7 +41,7 @@ func main() {
 	fmt.Println(f.originalText)
 	fmt.Println(f.outputFile)
 
-	err = qrcode.WriteFile(f.originalText, qrcode.Medium, 256, f.outputFile)
+	err = qrcode.WriteFile(f.originalText, qrcode.RecoveryLevel(f.level), f.size, f.outputFile)
 	if err != nil {
 		panic("画像生成でエラー")
 	}
